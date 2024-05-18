@@ -1,2 +1,3 @@
 # MushroomCave
- Game about Mushrooms and Caves
+ \iGame about Mushrooms and Caves\i
+You play as Mushy, a purple round-cap mushroom

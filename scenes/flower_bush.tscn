@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://dwj1jakdgqndk"]
+
+[ext_resource type="Texture2D" uid="uid://cbfjekfxqi72c" path="res://assets/fonts/four-seasons-copy.png" id="1_5s008"]
+[ext_resource type="Script" path="res://scripts/flower_bush.gd" id="1_g427v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qnrb2"]
+atlas = ExtResource("1_5s008")
+region = Rect2(16, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rx0h6"]
+atlas = ExtResource("1_5s008")
+region = Rect2(16, 80, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pcvfp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qnrb2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rx0h6")
+}],
+"loop": true,
+"name": &"picked",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mrteb"]
+size = Vector2(10, 5.5)
+
+[node name="FlowerBush" type="Area2D"]
+collision_mask = 4
+script = ExtResource("1_g427v")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_pcvfp")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3.25)
+shape = SubResource("RectangleShape2D_mrteb")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

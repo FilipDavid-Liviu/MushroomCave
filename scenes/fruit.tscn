@@ -1,0 +1,109 @@
+[gd_scene load_steps=15 format=3 uid="uid://bwf11wscdjb7i"]
+
+[ext_resource type="Script" path="res://scripts/fruit.gd" id="1_w73c5"]
+[ext_resource type="Texture2D" uid="uid://cbfjekfxqi72c" path="res://assets/fonts/four-seasons-copy.png" id="2_2hus0"]
+[ext_resource type="Texture2D" uid="uid://7otk4epmdu2p" path="res://assets/fonts/four-seasons-tileset.png" id="3_nsic1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0lp0"]
+atlas = ExtResource("2_2hus0")
+region = Rect2(96, 176, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3hi0d"]
+atlas = ExtResource("2_2hus0")
+region = Rect2(96, 192, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_071o8"]
+atlas = ExtResource("2_2hus0")
+region = Rect2(96, 208, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_clpxf"]
+atlas = ExtResource("2_2hus0")
+region = Rect2(96, 224, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83ofu"]
+atlas = ExtResource("2_2hus0")
+region = Rect2(112, 176, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jorm4"]
+atlas = ExtResource("2_2hus0")
+region = Rect2(112, 192, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7lcio"]
+atlas = ExtResource("2_2hus0")
+region = Rect2(112, 208, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2q6r4"]
+atlas = ExtResource("2_2hus0")
+region = Rect2(112, 224, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gpm7c"]
+atlas = ExtResource("3_nsic1")
+region = Rect2(64, 240, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cnruu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0lp0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3hi0d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_071o8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_clpxf")
+}],
+"loop": true,
+"name": &"apple",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83ofu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jorm4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7lcio")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2q6r4")
+}],
+"loop": true,
+"name": &"pear",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gpm7c")
+}],
+"loop": true,
+"name": &"picked",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5nom8"]
+radius = 5.0
+
+[node name="Fruit" type="Area2D"]
+collision_mask = 4
+script = ExtResource("1_w73c5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_cnruu")
+animation = &"apple"
+autoplay = "apple"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5)
+shape = SubResource("CircleShape2D_5nom8")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

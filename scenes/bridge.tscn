@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://docqtd0uojolg"]
+
+[ext_resource type="Script" path="res://scripts/bridge.gd" id="1_ccit5"]
+[ext_resource type="Texture2D" uid="uid://cbfjekfxqi72c" path="res://assets/fonts/four-seasons-copy.png" id="1_nbif8"]
+
+[node name="Bridge" type="StaticBody2D"]
+collision_mask = 2
+script = ExtResource("1_ccit5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, -4)
+texture = ExtResource("1_nbif8")
+region_enabled = true
+region_rect = Rect2(-0.337433, 111.993, 50.1806, 9.99319)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(1, 0)
+scale = Vector2(2.3125, 1)
+polygon = PackedVector2Array(-10.8108, -9, -0.432433, -6, 9.94595, -9, 9.94595, -3, -0.432433, 0, -10.8108, -3)
+one_way_collision = true
+
+[node name="NPC part" type="StaticBody2D" parent="."]
+collision_layer = 10
+
+[node name="HARDCollision" type="CollisionPolygon2D" parent="NPC part"]
+position = Vector2(1, 0)
+scale = Vector2(2.3125, 1)
+polygon = PackedVector2Array(-10.8108, -9, -0.432433, -6, 9.94595, -9, 9.94595, -3, -0.432433, 0, -10.8108, -3)
+one_way_collision = true

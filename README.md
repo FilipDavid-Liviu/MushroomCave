@@ -8,4 +8,4 @@ Game about Mushrooms and Caves
 
 -Mushy can also meet fellow mushrooms and give them flowers!
 
--Mushy is splecial: mush can grow a pair of wings in order to fly.
+-Mushy is special: mush can grow a pair of wings in order to fly.

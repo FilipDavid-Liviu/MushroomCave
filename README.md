@@ -1,6 +1,6 @@
 # MushroomCave
 
-Game about Mushrooms and Caves
+2D Platformer Game about Mushrooms and Caves
 
 -You play as Mushy, a purple round-cap mushroom.
 

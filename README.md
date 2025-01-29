@@ -1,11 +1,18 @@
 # MushroomCave
 
-2D Platformer Game about Mushrooms and Caves
+2D Platformer featuring Mushrooms and a Cave
 
--You play as Mushy, a purple round-cap mushroom.
+Key Features:
+<ul> 
+<li>Playable Character: Control Mushy, a charming mushroom with special abilities, as they navigate the Cave.
+<li>Collectible Items: Gather flowers from flower bushes and fruits to boost Mushy's speed.
+<li>Interaction with Fellow Mushrooms: Meet other mushrooms through the Cave and offer them flowers.
+<li>Special Abilities: Mushy can grow wings and take to the skies for aerial exploration!
+</ul>
 
--Mushy can collect flowers from flower bushes and eat fruits in order to gain speed boosts.
-
--Mushy can also meet fellow mushrooms and give them flowers!
-
--Mushy is special: mush can grow a pair of wings in order to fly.
+Game Mechanics:
+<ul> 
+<li>Platforming Action: Jump, run, and navigate with smooth and intuitive controls.
+<li>Speed Boosts: Consume fruits to temporarily increase your speed, allowing for faster movement.
+<li>Flight: Allow Mushy to grow wings and soar through the air, opening new pathways.
+</ul>
